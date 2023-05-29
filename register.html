@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="css/common.css">
+      <link rel="stylesheet" href="css/register.css">      
+      <title>
+         User login page
+      </title>
+   </head>
+
+   <body>
+      <div class="container">         
+         <div class="wrapper">
+            <div class="title">
+               Register
+            </div>
+            <form action="/login" method="get">  
+               <div class="row">
+                  <div class="column">
+                     <label for="login-name">Login name</label>
+                     <input name="login-name">
+                  </div>
+                  <div class="column">
+                     <label for="first-name">First name</label>
+                     <input name="first-name">
+                  </div>
+               </div>             
+               
+               <div class="row">
+                  <div class="column">
+                     <label for="psw">Password</label>
+                     <input name="psw">
+                  </div>
+                  <div class="column">
+                     <label for="repeat-psw">Repeat password</label>
+                     <input name="repeat-psw">
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="column">
+                     <label for="email">E-mail</label>
+                     <input name="email">
+                  </div>
+                  <div class="column">
+                     <label for="address">Address</label>
+                     <input name="address">
+                  </div>
+               </div>   
+
+               <div class="button">
+                  <input class="cancel-button" type="submit" value="Cancel">
+                  <input type="submit" value="Sign Up">
+               </div>
+
+            </form>
+         </div>
+      </div>
+   </body>
+</html>
