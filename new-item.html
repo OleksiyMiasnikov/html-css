@@ -14,42 +14,34 @@
       <div class="container">         
          <div class="wrapper">
             <div class="title">
-               Add New Coupon
+               Add New Certificate
             </div>
             <form action="/login" method="get">  
-               <div class="row">
-                  <div class="column">
-                     <label for="company">Company</label>
-                     <input name="company">
+               <div class="column-left">
+                  <div class="row">
+                     <label for="certificate-name">Certificates name</label>
+                     <input name="certificate-name">
                   </div>
-                  <div class="column">
-                     <label for="item-name">Item name</label>
-                     <input name="item-name">
+                  <div class="row">
+                     <label for="tag-name">Tag</label>
+                     <input name="tag-name">
                   </div>
-               </div>             
-               
-               <div class="row">
-                  <div class="column">
-                     <label for="psw">Password</label>
-                     <input name="psw">
+                  <div class="row">
+                     <label for="price">Price</label>
+                     <input name="price">
                   </div>
-                  <div class="column">
-                     <label for="repeat-psw">Repeat password</label>
-                     <input name="repeat-psw">
+                  <div class="row">
+                     <label for="duration">Duration</label>
+                     <input name="duration">
                   </div>
+               </div> 
+               <div class="column-right">                  
+                  <div class="row" style="height: 230px;">
+                     <label for="description">Description</label>
+                     <textarea name="description" rows="15" cols="49">
+                     </textarea>
+                  </div>                  
                </div>
-
-               <div class="row">
-                  <div class="column">
-                     <label for="email">E-mail</label>
-                     <input name="email">
-                  </div>
-                  <div class="column">
-                     <label for="address">Address</label>
-                     <input name="address">
-                  </div>
-               </div>   
-
                <div class="button">
                   <input class="cancel-button" type="submit" value="Back">
                   <input type="submit" value="Save">

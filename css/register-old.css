@@ -6,22 +6,17 @@
 }
 
 .wrapper form {
-    padding: 0px 0px 25px 30px;    
+    padding: 0px 0px 25px 30px;
 }
 
 .wrapper form .row {
-    margin-top: 30px;          
+    margin-top: 30px;    
+    display: flex;
 }
 
-.wrapper form .column-left {
-    width: 47%;    
-    float: left;
-}
-
-.wrapper form .column-right {
-    width: 47%;
+.wrapper form .column {
+    flex: 50%;    
     margin-right: 30px;
-    float: right;
 }
 
 .wrapper form .button input {
@@ -33,23 +28,16 @@
     color: #fff;
     font-size: 16px;
     font-weight: 500;    
-    border-radius: 5px;
 }
 
 .wrapper form .row input {
     text-align:left;
     font-size: 16px;
-    padding-left: 10px;    
+    padding-left: 10px;
 }
 
 .wrapper form .row label{    
-    font-size: 14px;   
-}
-
-.wrapper textarea{
-    border-radius: 5px;
-    align-items: center;
-    border: 1px solid lightgrey;
+    font-size: 14px;
 }
 
 

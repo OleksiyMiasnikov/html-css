@@ -4,7 +4,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="css/common.css">
-      <link rel="stylesheet" href="css/register.css">      
+      <link rel="stylesheet" href="css/register-old.css">      
       <title>
          User login page
       </title>
@@ -17,35 +17,39 @@
                Register
             </div>
             <form action="/login" method="get">  
-               <div class="column-left">
-                  <div class="row">
+
+               <div class="row">
+                  <div class="column">
                      <label for="login-name">Login name</label>
                      <input name="login-name">
                   </div>
-                  <div class="row">
-                     <label for="psw">Password</label>
-                     <input name="psw">
-                  </div>
-                  <div class="row">
-                     <label for="email">E-mail</label>
-                     <input name="email">
-                  </div>                  
-               </div>             
-               
-               <div class="column-right">
-                  <div class="row">
+                  <div class="column">
                      <label for="first-name">First name</label>
                      <input name="first-name">
                   </div>
-                  <div class="row">
+               </div>             
+               
+               <div class="row">
+                  <div class="column">
+                     <label for="psw">Password</label>
+                     <input name="psw">
+                  </div>
+                  <div class="column">
                      <label for="repeat-psw">Repeat password</label>
                      <input name="repeat-psw">
                   </div>
-                  <div class="row">
+               </div>
+
+               <div class="row">
+                  <div class="column">
+                     <label for="email">E-mail</label>
+                     <input name="email">
+                  </div>
+                  <div class="column">
                      <label for="address">Address</label>
                      <input name="address">
                   </div>
-               </div>                
+               </div>   
 
                <div class="button">
                   <input class="cancel-button" type="submit" value="Cancel">
