@@ -8,9 +8,16 @@
       <title>
          User login page
       </title>
+      <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script>
+         $(function () {
+            $("#header_content").load("header.html");
+         });
+      </script>
    </head>
 
-   <body>
+   <body>      
+      <div id="header_content"></div>
       <div class="container">         
          <div class="wrapper">            
             <img class="logo" src="/images/logo.png" alt="Logo">                       
