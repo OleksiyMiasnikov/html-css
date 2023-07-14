@@ -23,22 +23,21 @@
   background-color: WhiteSmoke;
   height: 40vw;
   width: 100hw;
-  margin: 0px 10px;
-  padding: 0px 50px;
+  padding: 0px 40px;
 }
 
 .cupons-item img {
-  height: 15vw;
-  width: 15hw;
-  margin: 20px 20px 0px 20px;
+  height: 220px;
+  width: 220px;
 }
 
 .cupons-item {
-  background-color: aqua;
+  background-color: white;
   vertical-align: top;
   display: inline-block;
   text-align: center;
   width: 220px;
+  margin: 5px 5px;
 }
 
 .cupons-title {
