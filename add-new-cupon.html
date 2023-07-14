@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/register.css" />
+    <title>Add nuw cupon</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      $(function () {
+        $("#header_content").load("header.html");
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="header_content"></div>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title">Add New Cupon</div>
+        <form action="/login" method="get">
+          <div class="column-left">
+            <div class="row">
+              <label for="company-name">Company</label>
+              <input name="company-name" />
+            </div>
+            <div class="row">
+              <label for="category-name">Category</label>
+              <select class="raw" name="category-name">
+                <option value="value1">Category name</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="valid-to">Valid to</label>
+              <input
+                name="valid-to"
+                type="datetime-local"
+                value="2020-12-12T02:00:00"
+              />
+            </div>
+            <div class="row">
+              <label for="price">Price</label>
+              <input name="price" />
+            </div>
+            <div class="row">
+              <label for="images">Images</label>
+              <input name="images" />
+            </div>
+          </div>
+          <div class="column-right">
+            <div class="row">
+              <label for="item-name">Item name</label>
+              <input name="item-name" />
+            </div>
+
+            <div class="row" style="height: 75px">
+              <label for="short-description">Short description</label>
+              <textarea name="short-description" rows="5" cols="49"> </textarea>
+            </div>
+
+            <div class="row" style="height: 140px">
+              <label for="long-description">Long description</label>
+              <textarea name="long-description" rows="8" cols="49"> </textarea>
+            </div>
+          </div>
+          <div class="button">
+            <input class="cancel-button" type="submit" value="Back" />
+            <input type="submit" value="Save" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

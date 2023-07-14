@@ -1,0 +1,51 @@
+.categories-bar {
+  background-color: lightgray;
+  height: 10vw;
+  width: 100hw;
+  margin: 0px 10px;
+  padding: 0px 150px;
+}
+
+.category-item img {
+  height: 6vw;
+  width: 6hw;
+  margin: 20px 20px 0px 20px;
+}
+
+.category-item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+}
+
+.cupons-bar {
+  background-color: WhiteSmoke;
+  height: 40vw;
+  width: 100hw;
+  margin: 0px 10px;
+  padding: 0px 50px;
+}
+
+.cupons-item img {
+  height: 15vw;
+  width: 15hw;
+  margin: 20px 20px 0px 20px;
+}
+
+.cupons-item {
+  background-color: aqua;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 220px;
+}
+
+.cupons-title {
+  display: flex;
+  justify-content: space-around;
+}
+
+.description {
+  font-size: 9px;
+}
