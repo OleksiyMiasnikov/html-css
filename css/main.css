@@ -21,7 +21,8 @@
 
 .cupons-bar {
   background-color: WhiteSmoke;
-  height: 40vw;
+  height: auto;
+  min-height: 40vw;
   width: 100hw;
   padding: 0px 40px;
 }

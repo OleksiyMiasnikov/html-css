@@ -1,0 +1,38 @@
+:root {
+  --width-title: 300px;
+  --width-image: 700px;
+  --hight-image: 300px;
+  --hight-description: 150px;
+  --hight-details: 500px;
+}
+
+.item-details {
+  display: flex;
+  margin: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: left;  
+}
+
+.item-image {
+  background-color: lightgray;
+  height: var(--hight-image);
+  width: var(--width-image);
+}
+
+.item-title { 
+  padding: 20px; 
+  margin-left: 50px;
+  background-color: white;
+  height: var(--hight-image);
+  width: var(--width-title);
+}
+
+.item-description {  
+  position: absolute;   
+  left: 50%;
+  transform: translate(-525px, 275px);
+  height: var(--hight-description);
+  width: var(--width-image);
+}
+
