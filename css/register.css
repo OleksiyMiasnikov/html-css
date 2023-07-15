@@ -24,16 +24,9 @@
   float: right;
 }
 
-.wrapper form .button input {
-  position: relative;
+.button input {  
   margin: 25px 9px 0px 0px;
-  padding: 5px;
-  left: 50%;
-  width: 22%;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
-  border-radius: 5px;
+  left: 50%;  
 }
 
 .wrapper form .row input {

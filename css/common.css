@@ -7,7 +7,6 @@
 
 body {
   background: rgb(224, 223, 223);
-  /* overflow: hidden; */
 }
 
 .container {
@@ -60,22 +59,30 @@ form .row input::placeholder {
   color: rgb(153, 153, 153);
 }
 
-.wrapper form .button input {
+.button input {
   color: #fff;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
   background: #04aa6d;
   border: 1px solid #a7a8a8;
   cursor: pointer;
+  position: relative;
+  padding: 5px;
+  width: 170px; 
+  border-radius: 5px;
 }
 
-form .button input:hover {
+.button input:hover {
   background: #047e51;
 }
 
-.wrapper form .button .cancel-button {
-  background-color: #ffffffa0;
+.button .cancel-button {  
+  background: #ffffffa0;  
   color: black;
+}
+
+.button .cancel-button:hover {
+  background: whitesmoke;
 }
 
 .wrapper form .button .cancel-button:hover {

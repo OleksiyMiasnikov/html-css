@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/checkout.css" />  
+  <title>Checkout page</title>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    $(function () {
+      $("#header_content").load("header.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="header_content"></div>
+  <div class="title">
+      <h1>Checkout</h1>
+  </div>
+  
+  <div class="checkout-bar">
+    <ul class="checkout-items">
+      <li class="checkout-item">
+        <img name="li-1" src="images/product.png" alt="" />
+        <span class="checkout-title">
+          Cupon name
+          <p class="checkout-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </span>        
+        <span class="checkout-price">
+          $200         
+        </span>
+      </li>
+      <li class="checkout-item">
+        <img name="li-1" src="images/product.png" alt="" />
+        <span class="checkout-title">
+          Cupon name
+          <p class="checkout-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </span>
+        <span class="checkout-price">
+          $120
+        </span>
+      </li>
+      <li class="checkout-item">
+        <img name="li-1" src="images/product.png" alt="" />
+        <span class="checkout-title">
+          Cupon name
+          <p class="checkout-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </p>
+        </span>
+        <span class="checkout-price">
+          $40
+        </span>
+      </li>     
+    </ul>
+    <div class="checkout-total"> 
+      <hr style="height:4px;">
+      <div class="price-total" >
+        Total: $360
+      </div>
+      <div class="button" >
+        <input class="cancel-button" type="submit" value="Back" />
+        <input type="submit" value="Checkout" />
+      </div>
+    </div>    
+  </div>
+</body>
+
+</html>
