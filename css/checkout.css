@@ -1,14 +1,19 @@
 .title {
+  position: absolute;
   background-color: lightgray;
-  height: 4rem;  
+  top: 3rem;
+  height: 4rem; 
+  width: 100%; 
   padding: 10px 150px;
 }
 
-.checkout-bar {
-  background-color: White;
+.checkout-bar {   
+  top: 7rem;  
+  width: 100%;  
+  background-color:white ;
   height: auto;
-  min-height: 47vw;  
-  padding: 0px 40px;
+  min-height: 52vw;  
+  padding: 120px 40px;
 }
 
 .checkout-items {  

@@ -1,7 +1,9 @@
-.categories-bar {
+.categories-bar { 
+  position: relative;
   background-color: lightgray;
+  /* top: 3rem; */
   height: 9vw;
-  width: 100hw;
+  width: 100%;
   margin: 0px 0px;
   padding: 0px 170px;
 }
@@ -20,8 +22,12 @@
   margin-left: 50px;
 }
 
-.cupons-bar {
-  background-color: WhiteSmoke;
+.cupons-bar {  
+  position: absolute;  
+  overflow-y: auto;
+  overflow-x: hidden; 
+  top: 12vw;   
+  background-color:white;
   height: auto;
   min-height: 40vw;
   width: 100hw;
@@ -49,4 +55,18 @@
 
 .description {
   font-size: 9px;
+}
+
+#button_top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  cursor: pointer;
+  color:gray;
+  border-color: white;
+}
+
+#button_top:hover {
+  color: black;
 }
