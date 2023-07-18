@@ -1,8 +1,8 @@
-.categories-bar { 
+.categories-bar {
   position: relative;
   background-color: lightgray;
   /* top: 3rem; */
-  height: 9vw;
+  height: 10vw;
   width: 100%;
   margin: 0px 0px;
   padding: 0px 170px;
@@ -23,17 +23,16 @@
   filter: blur(0px);
 }
 
-.category-item img:hover{ 
+.category-item img:hover {
   filter: blur(1px);
 }
 
-
-.cupons-bar {  
-  position: absolute;  
+.cupons-bar {
+  position: absolute;
   overflow-y: auto;
-  overflow-x: hidden; 
-  top: 12vw;   
-  background-color:white;
+  overflow-x: hidden;
+  top: 13vw;
+  background-color: white;
   height: auto;
   min-height: 40vw;
   width: 100hw;
@@ -69,10 +68,28 @@
   bottom: 20px;
   right: 30px;
   cursor: pointer;
-  color:gray;
+  color: gray;
   border-color: white;
 }
 
 #button_top:hover {
   color: black;
+}
+
+#button_left {
+  position: absolute;
+  top: 5rem;
+  left: 30px;
+  cursor: pointer;
+  color: gray;
+  border-color: white;
+}
+
+#button_right {
+  position: absolute;
+  top: 5rem;
+  right: 30px;
+  cursor: pointer;
+  color: gray;
+  border-color: white;
 }
