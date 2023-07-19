@@ -68,7 +68,7 @@ form .row input::placeholder {
   cursor: pointer;
   position: relative;
   padding: 5px;
-  width: 170px; 
+  width: 170px;
   border-radius: 5px;
 }
 
@@ -76,8 +76,8 @@ form .row input::placeholder {
   background: #047e51;
 }
 
-.button .cancel-button {  
-  background: #ffffffa0;  
+.button .cancel-button {
+  background: #ffffffa0;
   color: black;
 }
 
@@ -132,7 +132,7 @@ form .row input::placeholder {
     width: 30vw;
   }
 
-  .categories {
+  .select_categories {
     padding: 5px;
     border: 1px solid black;
   }
