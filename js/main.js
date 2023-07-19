@@ -6,13 +6,14 @@ fillContantToSelect();
 tagsLength = tags.length;
 
 // output cupons list
-function cuponsShow(cuponsToShow) {
-  document.querySelector(".cupons-bar").innerHTML = `<ul class="cupons"></ul>`;
+function cuponsShow(cuponsToShow) { 
+  document.querySelector(".cupons-bar").innerHTML = '';
   for (let i = 0; i < cuponsToShow.length; i++) {
-    let row = document.createElement("li");
+    console.log(`i: ${i} cupon: ${cuponsToShow[i].name}`)
+    let row = document.createElement("div");
     row.classList.add("cupons-item");
     row.innerHTML = `
-      <img name="li-1" src="images/cupon.png" alt="" />
+      <img src="images/cupon.png"/>
       <span class="cupons-title">
         ${cuponsToShow[i].name}
         <i class="fa fa-heart" style="font-size: 15px"></i>
@@ -26,7 +27,7 @@ function cuponsShow(cuponsToShow) {
         <p>${cuponsToShow[i].price}</p>
         <button>Add to Cart</button>
       </span>`;
-    document.querySelector(".cupons").appendChild(row);
+    document.querySelector(".cupons-bar").appendChild(row);
   }
 }
 

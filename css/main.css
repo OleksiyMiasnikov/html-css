@@ -1,7 +1,10 @@
+body {
+  background-color: white;
+}
+
 .categories-bar {
   position: relative;
-  background-color: lightgray;
-  /* top: 3rem; */
+  background-color: lightgray; 
   height: 10vw;
   width: 100%;
   margin: 0px 0px;
@@ -27,16 +30,15 @@
   filter: blur(1px);
 }
 
-.cupons-bar {
-  position: absolute;
+.cupons-bar {  
+  display: flex;
+  flex-wrap: wrap;  
   overflow-y: auto;
   overflow-x: hidden;
-  top: 13vw;
-  background-color: white;
-  height: auto;
-  min-height: 40vw;
-  width: 100hw;
-  padding: 0px 70px;
+  background-color: white; 
+  width: 100%;
+  padding: 0px 70px; 
+ 
 }
 
 .cupons-item img {
@@ -44,18 +46,24 @@
   width: 250px;
 }
 
+.cupons-item img:hover {
+  filter: blur(1px);
+}
+
 .cupons-item {
+  justify-content: center;
   background-color: white;
   vertical-align: top;
+  margin: auto;
   display: inline-block;
   text-align: center;
   width: 250px;
-  margin: 10px 20px;
 }
 
 .cupons-title {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 10px;
 }
 
 .description {
@@ -72,14 +80,14 @@
   border-color: white;
 }
 
-#button_top:hover {
+#button_top:hover, #button_left:hover, #button_right:hover {
   color: black;
 }
 
 #button_left {
   display: none;
   position: absolute;
-  top: 5rem;
+  top: 6rem;
   left: 30px;
   cursor: pointer;
   color: gray;
@@ -88,9 +96,11 @@
 
 #button_right {
   position: absolute;
-  top: 5rem;
+  top: 6rem;
   right: 30px;
   cursor: pointer;
   color: gray;
   border-color: white;
 }
+
+
