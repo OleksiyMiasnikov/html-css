@@ -166,3 +166,7 @@ const initTags = [
 localStorage.clear();
 localStorage.setItem("cupons", JSON.stringify(initCupons));
 localStorage.setItem("tags", JSON.stringify(initTags));
+
+let currentTag = 0;
+let tagsLength = 0;
+let tagsToShow = 4;
