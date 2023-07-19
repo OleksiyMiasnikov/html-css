@@ -63,10 +63,10 @@ function changingSelect(selectedTag) {
     .querySelector(".center-field")
     .querySelector(".select_categories");
   select.value = selectedTag;
-  tagIsSelected();
+  filteringByPatternAndTags();
 }
 
-function tagIsSelected() {
+function filteringByPatternAndTags() {
   let cuponsFiltered;
   let selectedTag = document.getElementById("select_categories").value;
   if (selectedTag) {
@@ -75,6 +75,14 @@ function tagIsSelected() {
     });
   } else {
     cuponsFiltered = cupons;
+  }
+  let pattern = document.getElementById("search-field").value;
+  if (pattern) {
+    cuponsFiltered = cuponsFiltered.filter((cupon) => {
+      return (
+        cupon.name.includes(pattern) || cupon.description.includes(pattern)
+      );
+    });
   }
   cuponsShow(cuponsFiltered);
 }

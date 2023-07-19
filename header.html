@@ -26,11 +26,13 @@
             class="search-field"
             type="text"
             placeholder="Search by item name"
+            onchange="filteringByPatternAndTags()"
+            id="search-field"
           />
           <select
             class="select_categories"
             id="select_categories"
-            onchange="tagIsSelected()"
+            onchange="filteringByPatternAndTags()"
           >
             <option value="">All Categories</option>
           </select>
