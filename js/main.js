@@ -5,16 +5,32 @@ cuponsShow(cupons);
 fillContantToSelect();
 tagsLength = tags.length;
 
+const startInputFunction = debounce(() => filteringByPatternAndTags());
 const input = document.querySelector("#search-field");
-input.addEventListener("input", updateValue);
+input.addEventListener("input", () => startInputFunction());
 
-function updateValue(e) {
-  // console.log(e.target.value)
-  filteringByPatternAndTags()
+function debounce(func, timeout = 500) {
+  let timer;
+  return () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(this); }, timeout);
+  };
+}
+
+//comporator for cupons
+function compare(cupon1, cupon2) {
+  if ( cupon1.creationDate < cupon2.creationDate ){
+    return 1;
+  }
+  if ( cupon1.creationDate > cupon2.creationDate ){
+    return -1;
+  }
+  return 0;
 }
 
 // output cupons list
 function cuponsShow(cuponsToShow) { 
+  cuponsToShow.sort( compare );
   document.querySelector(".cupons-bar").innerHTML = '';
   for (let i = 0; i < cuponsToShow.length; i++) {    
     let row = document.createElement("div");
@@ -27,11 +43,11 @@ function cuponsShow(cuponsToShow) {
       </span>
       <span class="cupons-title description">
         <p>${cuponsToShow[i].description}</p>
-        <p>Expires in 3 deys</p>
+        <p>${new Date(cuponsToShow[i].creationDate).toJSON().slice(0, 10)}</p>
       </span>
       <hr />
       <span class="cupons-title">
-        <p>${cuponsToShow[i].price}</p>
+        <p>$${cuponsToShow[i].price}</p>
         <button>Add to Cart</button>
       </span>`;
     document.querySelector(".cupons-bar").appendChild(row);
@@ -78,7 +94,7 @@ function changingSelect(selectedTag) {
 //filtering cupuns by part of name or description and tag
 function filteringByPatternAndTags() {
   let cuponsFiltered;
-  let selectedTag = document.getElementById("select_categories").value;
+  let selectedTag = document.getElementById("select_categories").value; 
   if (selectedTag) {
     cuponsFiltered = cupons.filter((cupon) => {
       return cupon.tags.includes(selectedTag);

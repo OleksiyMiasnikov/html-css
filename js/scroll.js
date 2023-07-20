@@ -1,6 +1,21 @@
 window.onscroll = function () {
-  scrollFunction();
+  debounce(() => scrollFunction(), 1000)
 };
+
+function debounce(f, ms) {
+  let isCooldown = false;  
+  return function() {
+    if (isCooldown) {
+      console.log('return')
+      return;
+    }  
+    console.log('f')
+    f.apply(this, arguments);
+    isCooldown = true;
+    setTimeout(() => isCooldown = false, ms);
+  };
+
+}
 
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
