@@ -1,5 +1,5 @@
 window.onscroll = function () {
-  debounce(() => scrollFunction(), 1000)
+  scrollFunction()
 };
 
 function debounce(f, ms) {
@@ -18,6 +18,7 @@ function debounce(f, ms) {
 }
 
 function scrollFunction() {
+  localStorage.setItem('position', JSON.stringify(document.documentElement.scrollTop))  
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("button_top").style.display = "block";
   } else {
@@ -25,9 +26,9 @@ function scrollFunction() {
   }
 }
 
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+function scrollToFunction(position) {
+  document.body.scrollTop = position;
+  document.documentElement.scrollTop = position;
 }
 
 function scrollTags(direction) {

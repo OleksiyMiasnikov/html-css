@@ -165,7 +165,8 @@ const newCupons = [
 // ];
 
 const newTags = initTagsFunction();
-localStorage.clear();
+localStorage.removeItem("cupons")
+localStorage.removeItem("tags")
 localStorage.setItem("cupons", JSON.stringify(newCupons));
 localStorage.setItem("tags", JSON.stringify(newTags));
 

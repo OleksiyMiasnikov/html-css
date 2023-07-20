@@ -5,6 +5,12 @@ cuponsShow(cupons);
 fillContantToSelect();
 tagsLength = tags.length;
 
+//return to the last scroll position on the page
+const startPosition = JSON.parse(localStorage.getItem('position'))
+if (startPosition) {
+  scrollToFunction(startPosition)
+}
+
 const startInputFunction = debounce(() => filteringByPatternAndTags());
 const input = document.querySelector("#search-field");
 input.addEventListener("input", () => startInputFunction());
