@@ -2,6 +2,14 @@ const cupons = JSON.parse(localStorage.getItem("cupons"));
 const tags = JSON.parse(localStorage.getItem("tags"));
 cuponsToShow = [...cupons]
 tagsShow(currentTag);
+
+//get quantity of cupons on the previous page from localstorege
+const sizeFromLocal = JSON.parse(localStorage.getItem('cuponsOnScreen'))
+console.log(sizeFromLocal)
+if (sizeFromLocal) {
+  startCupon = 0
+  cuponsOnScreen = sizeFromLocal
+}
 startCuponsShowFunction(cupons);
 fillContantToSelect();
 tagsLength = tags.length;
@@ -44,14 +52,19 @@ function startCuponsShowFunction() {
 }
 
 // output cupons list
-function cuponsShowFunction(start, size) { 
+function cuponsShowFunction(start, size) {  
+  
+  if (start + size >= cuponsToShow.length) {
+    size = cuponsToShow.length - start
+  }
+  console.log(`cuponsToShow ${cuponsToShow}, start ${start}, size ${size}`)
   for (let i = start; i < size + start; i++) {    
     let row = document.createElement("div");
     row.classList.add("cupons-item");
     row.innerHTML = `
       <img src="images/cupon.png"/>
       <span class="cupons-title">
-        ${cuponsToShow[i].name}
+         ${cuponsToShow[i].name}
         <i class="fa fa-heart" style="font-size: 15px"></i>
       </span>
       <span class="cupons-title description">
@@ -88,9 +101,7 @@ function fillContantToSelect() {
     let row = document.createElement("option");
     row.value = `${tags[i]}`;
     row.innerHTML = `${tags[i]}`;
-    document
-      .querySelector(".center-field")
-      .querySelector(".select_categories")
+    document.querySelector('.center-field .select_categories')      
       .appendChild(row);
   }
 }
@@ -117,7 +128,7 @@ function filteringByPatternAndTags() {
   }
   let pattern = document.getElementById("search-field").value;
   if (pattern) {
-    cuponsToShow = cuponsFiltered.filter((cupon) => {
+    cuponsToShow = cuponsToShow.filter((cupon) => {
       return (
         cupon.name.includes(pattern) || cupon.description.includes(pattern)
       );

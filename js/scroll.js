@@ -19,19 +19,24 @@ function debounce(f, ms) {
 
 function scrollFunction() {  
   localStorage.setItem('position', JSON.stringify(document.documentElement.scrollTop))  
+  localStorage.setItem('cuponsOnScreen', JSON.stringify(cuponsOnScreen)) 
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("button_top").style.display = "block";
   } else {
     document.getElementById("button_top").style.display = "none";
   }
 
-  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {   
-    cuponsOnScreen += cuponsOnRow
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) { 
     cuponsShowFunction(cuponsOnScreen, cuponsOnRow)
+    cuponsOnScreen += cuponsOnRow
+    if (cuponsOnScreen >= cuponsToShow.length) {
+      cuponsOnScreen = cuponsToShow.length
+    }
   }
 }
 
 function scrollToFunction(position) {
+  console.log(position)
   document.body.scrollTop = position;
   document.documentElement.scrollTop = position;
 }
