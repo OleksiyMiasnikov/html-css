@@ -17,12 +17,17 @@ function debounce(f, ms) {
 
 }
 
-function scrollFunction() {
+function scrollFunction() {  
   localStorage.setItem('position', JSON.stringify(document.documentElement.scrollTop))  
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("button_top").style.display = "block";
   } else {
     document.getElementById("button_top").style.display = "none";
+  }
+
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {   
+    cuponsOnScreen += cuponsOnRow
+    cuponsShowFunction(cuponsOnScreen, cuponsOnRow)
   }
 }
 

@@ -1,7 +1,8 @@
 const cupons = JSON.parse(localStorage.getItem("cupons"));
 const tags = JSON.parse(localStorage.getItem("tags"));
+cuponsToShow = [...cupons]
 tagsShow(currentTag);
-cuponsShow(cupons);
+startCuponsShowFunction(cupons);
 fillContantToSelect();
 tagsLength = tags.length;
 
@@ -11,34 +12,40 @@ if (startPosition) {
   scrollToFunction(startPosition)
 }
 
-const startInputFunction = debounce(() => filteringByPatternAndTags());
-const input = document.querySelector("#search-field");
-input.addEventListener("input", () => startInputFunction());
+const startInputFunction = debounce(() => filteringByPatternAndTags())
+const input = document.querySelector("#search-field")
+input.addEventListener("input", () => startInputFunction())
 
 function debounce(func, timeout = 500) {
-  let timer;
+  let timer
   return () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this); }, timeout);
-  };
+    clearTimeout(timer)
+    timer = setTimeout(() => { func.apply(this); }, timeout)
+  }
 }
 
 //comporator for cupons
 function compare(cupon1, cupon2) {
   if ( cupon1.creationDate < cupon2.creationDate ){
-    return 1;
+    return 1
   }
   if ( cupon1.creationDate > cupon2.creationDate ){
-    return -1;
+    return -1
   }
   return 0;
 }
 
 // output cupons list
-function cuponsShow(cuponsToShow) { 
-  cuponsToShow.sort( compare );
-  document.querySelector(".cupons-bar").innerHTML = '';
-  for (let i = 0; i < cuponsToShow.length; i++) {    
+function startCuponsShowFunction() { 
+  cuponsToShow.sort(compare)  
+  document.querySelector(".cupons-bar").innerHTML = ''
+  startCupon = cuponsOnScreen;
+  cuponsShowFunction(0, cuponsOnScreen)
+}
+
+// output cupons list
+function cuponsShowFunction(start, size) { 
+  for (let i = start; i < size + start; i++) {    
     let row = document.createElement("div");
     row.classList.add("cupons-item");
     row.innerHTML = `
@@ -98,23 +105,23 @@ function changingSelect(selectedTag) {
 }
 
 //filtering cupuns by part of name or description and tag
-function filteringByPatternAndTags() {
-  let cuponsFiltered;
+function filteringByPatternAndTags() {  
   let selectedTag = document.getElementById("select_categories").value; 
+  console.log(selectedTag)
   if (selectedTag) {
-    cuponsFiltered = cupons.filter((cupon) => {
+    cuponsToShow = cupons.filter((cupon) => {
       return cupon.tags.includes(selectedTag);
     });
   } else {
-    cuponsFiltered = cupons;
+    cuponsToShow = cupons;
   }
   let pattern = document.getElementById("search-field").value;
   if (pattern) {
-    cuponsFiltered = cuponsFiltered.filter((cupon) => {
+    cuponsToShow = cuponsFiltered.filter((cupon) => {
       return (
         cupon.name.includes(pattern) || cupon.description.includes(pattern)
       );
     });
   }
-  cuponsShow(cuponsFiltered);
+  startCuponsShowFunction();
 }

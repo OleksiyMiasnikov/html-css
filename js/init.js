@@ -139,6 +139,146 @@ const newCupons = [
     price: 25000,
     creationDate: new Date("2021-12-14"),
   },
+  {
+    name: "Cupon 21",
+    description: "Description of Cupon 21. cap - clothes",
+    tags: ["cap","clothes"],
+    price: 25230,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 22",
+    description: "Description of Cupon 22. Dress - clothes",
+    tags: ["dress","clothes"],
+    price: 250,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 23",
+    description: "Description of Cupon 23. Python - IT",
+    tags: ["Python", "IT"],
+    price: 700,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 24",
+    description: "Description of Cupon 24. t-short - clothes",
+    tags: ["t-short","clothes"],
+    price: 150,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 25",
+    description: "Description of Cupon 25. movie - art",
+    tags: ["movie","art"],
+    price: 21,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 26",
+    description: "Description of Cupon 26. flower - nature",
+    tags: ["flower","nature"],
+    price: 15,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 27",
+    description: "Description of Cupon 27. bird - nature",
+    tags: ["bird","nature"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 28",
+    description: "Description of Cupon 28. Java - IT",
+    tags: ["Java","IT"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 29",
+    description: "Description of Cupon 29. forest - nature",
+    tags: ["forest","nature"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 30",
+    description: "Description of Cupon 30. sun - nature",
+    tags: ["sun","nature"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 31",
+    description: "Description of Cupon 31. HTML - IT",
+    tags: ["HTML","IT"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 32",
+    description: "Description of Cupon 32. ocean - nature",
+    tags: ["ocean", "nature"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 33",
+    description: "Description of Cupon 33. poetry - art",
+    tags: ["poetry", "art"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 34",
+    description: "Description of Cupon 34. TCP/IP - IT",
+    tags: ["TCP/IP","IT"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 35",
+    description: "Description of Cupon 35. painting - art",
+    tags: ["painting","art"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 36",
+    description: "Description of Cupon 36. music - art",
+    tags: ["music","art"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 37",
+    description: "Description of Cupon 37. cycling - sport",
+    tags: ["cycling","sport"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 38",
+    description: "Description of Cupon 38. sport - diving",
+    tags: ["diving","sport"],
+    price: 25000,
+    creationDate: new Date("2022-05-10"),
+  },
+  {
+    name: "Cupon 39",
+    description: "Description of Cupon 39. sail - sport",
+    tags: ["sail","sport"],
+    price: 25000,
+    creationDate: new Date("2021-12-10"),
+  },
+  {
+    name: "Cupon 40",
+    description: "Description of Cupon 40. Football - sport",
+    tags: ["football","sport"],
+    price: 25000,
+    creationDate: new Date("2021-12-14"),
+  },
 ];
 
 // const newTags = [
@@ -173,6 +313,10 @@ localStorage.setItem("tags", JSON.stringify(newTags));
 let currentTag = 0;
 let tagsLength = 0;
 let tagsToShow = 6;
+let cuponsOnScreen = 18;
+let cuponsOnRow = 6;
+let startCupon = 0;
+let cuponsToShow = [];
 
 function initTagsFunction() {
   let tags = new Set() 
