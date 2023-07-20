@@ -5,11 +5,18 @@ cuponsShow(cupons);
 fillContantToSelect();
 tagsLength = tags.length;
 
+const input = document.querySelector("#search-field");
+input.addEventListener("input", updateValue);
+
+function updateValue(e) {
+  // console.log(e.target.value)
+  filteringByPatternAndTags()
+}
+
 // output cupons list
 function cuponsShow(cuponsToShow) { 
   document.querySelector(".cupons-bar").innerHTML = '';
-  for (let i = 0; i < cuponsToShow.length; i++) {
-    console.log(`i: ${i} cupon: ${cuponsToShow[i].name}`)
+  for (let i = 0; i < cuponsToShow.length; i++) {    
     let row = document.createElement("div");
     row.classList.add("cupons-item");
     row.innerHTML = `
@@ -59,6 +66,7 @@ function fillContantToSelect() {
   }
 }
 
+//changing select value when tag was picked
 function changingSelect(selectedTag) {
   const select = document
     .querySelector(".center-field")
@@ -67,6 +75,7 @@ function changingSelect(selectedTag) {
   filteringByPatternAndTags();
 }
 
+//filtering cupuns by part of name or description and tag
 function filteringByPatternAndTags() {
   let cuponsFiltered;
   let selectedTag = document.getElementById("select_categories").value;

@@ -10,23 +10,12 @@ function scrollFunction() {
   }
 }
 
-function mouseEnterFunction() {
-  if (currentTag > 0) {
-    console.log("left block");
-    document.getElementById("button_left").style.display = "block";
-  } else {
-    console.log("left none");
-    document.getElementById("button_lrft").style.display = "none";
-  }
-}
-
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
 function scrollTags(direction) {
-  console.log(direction);
   if (direction === "left") {
     if (currentTag > 0) {
       currentTag--;
