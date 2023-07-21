@@ -1,42 +1,46 @@
 window.onscroll = function () {
-  scrollFunction()
+  scrollFunction();
 };
 
 function debounce(f, ms) {
-  let isCooldown = false;  
-  return function() {
+  let isCooldown = false;
+  return function () {
     if (isCooldown) {
-      console.log('return')
       return;
-    }  
-    console.log('f')
+    }
     f.apply(this, arguments);
     isCooldown = true;
-    setTimeout(() => isCooldown = false, ms);
+    setTimeout(() => (isCooldown = false), ms);
   };
-
 }
 
-function scrollFunction() {  
-  localStorage.setItem('position', JSON.stringify(document.documentElement.scrollTop))  
-  localStorage.setItem('cuponsOnScreen', JSON.stringify(cuponsOnScreen)) 
+function scrollFunction() {
+  localStorage.setItem(
+    "position",
+    JSON.stringify(document.documentElement.scrollTop)
+  );
+  localStorage.setItem("cuponsOnScreen", JSON.stringify(cuponsOnScreen));
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("button_top").style.display = "block";
   } else {
     document.getElementById("button_top").style.display = "none";
   }
 
-  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) { 
-    cuponsShowFunction(cuponsOnScreen, cuponsOnRow)
-    cuponsOnScreen += cuponsOnRow
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 1
+  ) {
+    console.log(`scroll`);
+    cuponsShowFunction(cuponsOnScreen, cuponsInRow);
+    cuponsOnScreen += cuponsInRow;
     if (cuponsOnScreen >= cuponsToShow.length) {
-      cuponsOnScreen = cuponsToShow.length
+      cuponsOnScreen = cuponsToShow.length;
     }
   }
 }
 
 function scrollToFunction(position) {
-  console.log(position)
+  console.log(`position: ${position}`);
   document.body.scrollTop = position;
   document.documentElement.scrollTop = position;
 }
