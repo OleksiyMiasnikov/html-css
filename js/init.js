@@ -289,8 +289,8 @@ localStorage.setItem("tags", JSON.stringify(newTags));
 
 let currentTag = 0;
 let tagsLength = 0;
-let tagsToShow = 5;
-let cuponsInRow = Math.trunc(window.innerWidth / 320);
+let tagsToShow = Math.trunc((window.innerWidth -240) / 190);
+let cuponsInRow = Math.trunc((window.innerWidth -140) / 250);
 let cuponsInColumn = Math.trunc(window.innerHeight / 400) + 1;
 console.log(`innerWidth: ${window.innerWidth}`);
 console.log(`cupons in row: ${cuponsInRow}`);
