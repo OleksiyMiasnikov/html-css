@@ -23,6 +23,7 @@ if (startPosition) {
 const startInputFunction = debounce(() => filteringByPatternAndTags());
 const input = document.querySelector("#search-field");
 input.addEventListener("input", () => startInputFunction());
+window.onresize = function(){ location.reload(); }
 
 function debounce(func, timeout = 500) {
   let timer;
